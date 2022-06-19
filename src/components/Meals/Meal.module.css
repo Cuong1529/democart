@@ -1,0 +1,22 @@
+.meal {
+    text-align: center;
+}
+
+.meal p {
+    color: white;
+}
+
+.detail {
+    width: 60%;
+    margin: 10px auto;
+}
+table, th, td {
+    border:1px solid black;
+}
+
+td {
+    color: white;
+}
+th {
+    background-color: #e46d0b;
+}

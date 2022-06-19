@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`change 1`] = `
+<a
+  className="normal"
+  href="face.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Face
+</a>
+`;
+
+exports[`change 2`] = `
+<a
+  className="hovered"
+  href="face.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Face
+</a>
+`;
+
+exports[`change 3`] = `
+<a
+  className="normal"
+  href="face.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Face
+</a>
+`;
