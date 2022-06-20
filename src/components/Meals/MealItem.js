@@ -1,4 +1,4 @@
-import React, { Component , useContext} from "react";
+import React, { Component, useContext, useEffect, useState } from "react";
 import MealItemWrapper from "./MealItemWrapper";
 import MealItemForm from "./MealItemForm";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import CartContext from "../../store/cart-context";
 
 function MealItem(props) {
   const cartContext = useContext(CartContext);
-
+  const [description, setDescription] = useState(props.description)
   const price = `$${props.price.toFixed(2)}`;
 
   const addToCartHandler = (amount) => {
@@ -18,15 +18,22 @@ function MealItem(props) {
       price: props.price
     })
   }
+
+  const onChangeDescription = (event) => {
+    const { value } = event.target;
+    setDescription(value);
+  }
+
   return (
     <li>
       <div className={classes.meal}>
         <Link to={`/meals/${props.id}`}>
           <h3>{props.name}</h3>
         </Link>
-        <div className={classes.description}>{props.description}</div>
+        {/* <div className={classes.description}>{props.description}</div> */}
+        <input className={classes.description} value={description} onChange={onChangeDescription} />
         <div className={classes.price}>{price}</div>
-        <MealItemForm onAddToCart={addToCartHandler}/>
+        <MealItemForm onAddToCart={addToCartHandler} />
       </div>
     </li>
 
@@ -74,7 +81,7 @@ function MealItem(props) {
 //              <Link to={`/meals/${id}`}>
 //                <h3>{name}</h3>
 //              </Link>
-//              <input className="description" value={description} onChange={this.onChageDescription} />
+//  <input className="description" value={description} onChange={this.onChageDescription} />
 //              <div className="price">{price}</div>
 //            </div>
 //            <div></div>
