@@ -9,7 +9,7 @@ function Cart(props) {
 
     const cartItemAddHandler = (item) => {
         cartContext.addItem({
-            ...item, 
+            ...item,
             amount: 1,
         })
     }
