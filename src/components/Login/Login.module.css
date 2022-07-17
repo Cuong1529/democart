@@ -1,12 +1,16 @@
 .login {
     width: 300px;
-    height: 300px;
+    height: 350px;
     border: 1 solid grey;
     background-color: white;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    margin: 200px auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -100px;
 }
 
 input {

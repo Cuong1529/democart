@@ -7,13 +7,19 @@ function Login() {
     localStorage.setItem("accessToken", true);
     history.replace("/meals");
   };
+  const registerHandler = () => {
+    history.push("/register");
+  };
   return (
-    <form className={classes.login} onSubmit={loginHandler}>
-      <h1>Login</h1>
-      <input placeholder="Username" />
-      <input placeholder="Password" />
-      <button>Login</button>
-    </form>
+    <div className={classes.login}>
+      <form onSubmit={loginHandler}>
+        <h1>Login</h1>
+        <input placeholder="Username" />
+        <input placeholder="Password" type="password" />
+        <button>Login</button>
+      </form>
+      <button onClick={registerHandler}>Register</button>
+    </div>
   );
 }
 

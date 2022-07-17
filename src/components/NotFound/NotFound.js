@@ -1,5 +1,10 @@
+import classes from "./NotFound.module.css";
 function NotFound() {
-  return <h2>404 Page not found</h2>;
+  return (
+    <div className={classes.notfound}>
+      <h2>404 Page not found</h2>
+    </div>
+  );
 }
 
 export default NotFound;
