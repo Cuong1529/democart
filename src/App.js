@@ -3,12 +3,12 @@ import Meals from "./components/Meals/Meals.js";
 import Cart from "./components/Cart/Cart.js";
 import MealDetail from "./components/Meals/MealDetail.js";
 import { useState } from "react";
-import { Switch, Redirect, Route } from "react-router-dom";
+import { Switch, Redirect, Route, useHistory } from "react-router-dom";
 import CartProvider from "./store/CartProvider.js";
 
 function App() {
   const [isShowCart, setShowCart] = useState(false);
-
+  const history = useHistory();
 
   const showCartHandler = () => {
     setShowCart(true);
@@ -18,10 +18,15 @@ function App() {
     setShowCart(false);
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("accessToken");
+    history.replace("/");
+  };
+
   return (
     <CartProvider>
       {isShowCart && <Cart onHideCart={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      <Header onShowCart={showCartHandler} onLogout={logoutHandler} />
       <main>
         <Switch>
           <Route path="/" exact>

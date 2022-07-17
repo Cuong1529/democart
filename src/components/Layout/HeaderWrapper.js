@@ -37,6 +37,13 @@ const HeaderWrapper = styled.div`
     border: none;
     padding: 5px;
   }
+
+  .action {
+    display: flex;
+  }
+  .logout {
+    margin-right: 5px;
+  }
 `;
 
 export default HeaderWrapper;

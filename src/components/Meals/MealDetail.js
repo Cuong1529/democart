@@ -27,9 +27,9 @@ export default function MealDetail() {
   useEffect(() => {
     console.log("change description with dependency");
     // document.getElementById('description').innerHTML = description
-    document.title = description
-  },[description])
-  
+    document.title = description;
+  }, [description]);
+
   return (
     <section className={classes.meal}>
       <h1>Detail Page</h1>
@@ -53,7 +53,13 @@ export default function MealDetail() {
             <td>{meal.name}</td>
             <td id="description">{description}</td>
             <td>{meal.price}</td>
-            <td><input value={quantity} type='number' onChange={(event) => setQuantity(event.target.value)}/></td>
+            <td>
+              <input
+                value={quantity}
+                type="number"
+                onChange={(event) => setQuantity(event.target.value)}
+              />
+            </td>
             <td>{totalPrice.toFixed(2)}</td>
           </tr>
         </tbody>

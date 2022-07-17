@@ -8,10 +8,15 @@ function Header(props) {
     <HeaderWrapper>
       <header className="header">
         <h1>Meals</h1>
-        <HeaderCartButton onClick={props.onShowCart}/>
+        <div className="action">
+          <button className="logout" onClick={props.onLogout}>
+            Logout
+          </button>
+          <HeaderCartButton onClick={props.onShowCart} />
+        </div>
       </header>
       <div className="main-image">
-        <img src={mealImage} alt='Math Problems'/>
+        <img src={mealImage} alt="Math Problems" />
       </div>
     </HeaderWrapper>
   );
